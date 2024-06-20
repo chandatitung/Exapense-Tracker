@@ -1,0 +1,48 @@
+.month-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  
+  .month-table {
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+  }
+  
+  .month-row {
+    display: flex;
+    align-items: center;
+  }
+  
+  .month-item {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+  }
+  
+  .month-name {
+    margin-right: 5px;
+  }
+  
+  .btn-primary {
+    margin-left: 10px;
+  }
+  
+  .input-table {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .input-row {
+    display: flex;
+  }
+  
+  .input-item {
+    margin-bottom: 10px;
+  }
+  
+  .form-control {
+    width: 100px; /* Adjust width as needed */
+  }
+  

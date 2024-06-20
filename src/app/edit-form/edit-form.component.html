@@ -1,0 +1,25 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th class="month-name" *ngFor="let month of months">
+          {{ month.name }}
+          <button *ngIf="month === months[months.length - 1] && months.length < allMonths.length"
+                  (click)="addMonth()" class="btn btn-primary">
+                  <i class="fa-solid fa-plus"></i>
+
+                </button>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td *ngFor="let month of months" class="input-item">
+          <input type="text" [(ngModel)]="month.amount" class="form-control" />
+        </td>
+      </tr>
+    </tbody>
+  </table> 
+
+
+
+   

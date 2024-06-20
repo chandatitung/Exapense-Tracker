@@ -1,0 +1,61 @@
+<div class="container mt-5">
+  <h1 class="text-center mb-4">Expense Manager</h1>
+  <div class="row mb-2">
+    <div class="col text-right">
+     
+    </div>
+  </div>
+  <div class="expense-table">
+    <table class="table table-bordered">
+      <thead class="thead-light">
+        <tr>
+          <th rowspan="2">S.N</th>
+          <th rowspan="2">Title</th>
+          <ng-container *ngFor="let year of years">
+            <th colspan="2" class="text-center">Year {{ year }}
+              <button type="button" class="btn btn-primary" (click)="addYear()">
+                <i class="fa-solid fa-plus"></i>
+              </button>
+            </th>
+           
+          </ng-container>
+          <th rowspan="2" class="text-center">Action</th>
+        </tr>
+        <tr>
+          <ng-container *ngFor="let year of years; let j = index">
+            <th *ngFor="let month of months" class="text-center">{{ month }}
+              <button type="button" class="btn btn-primary" (click)="addMonth()">
+                <i class="fa-solid fa-plus"></i>
+                </button>
+            </th>
+          </ng-container>
+        </tr>
+      </thead>
+      <tbody id="expense-list">
+        <tr *ngFor="let expense of expenses; let i = index">
+          <td>{{ expense.serialNumber }}</td>
+          <td><input type="text" [(ngModel)]="expense.title" class="form-control"></td>
+          <ng-container *ngFor="let year of years; let j = index">
+            <td class="text-center">
+              <input type="number" [(ngModel)]="expense.amounts[j].amount" class="form-control">
+            </td>
+            <td class="text-center">{{ expense.amounts[j].month }}</td>
+          </ng-container>
+          <td class="text-center">
+            <button type="button" class="btn btn-sm btn-danger rounded btn-spacing" data-bs-toggle="tooltip"
+              data-bs-title="Add" data-bs-placement="top">
+              <i class="fa-solid fa-plus"></i>
+            </button>
+            <button type="button" class="btn btn-sm btn-warning rounded" data-bs-toggle="tooltip" data-bs-title="Edit"
+              data-bs-placement="top">
+              <i class="fa-solid fa-pen"></i>
+            </button>
+
+
+          </td>
+        </tr>
+      </tbody>
+    </table>
+   
+  </div>
+</div>
